@@ -33,7 +33,7 @@ function AddAppointment(){
                 <li>
                 <label htmlFor='userDes'>기타설명</label>
                 <input id='userDes'
-                type='textarea' cols='30' row='10' placeholder='기타설명'/></li>
+                type='textarea' cols='30' rows='10' placeholder='기타설명'/></li>
             </ul>
             <p>
                 <input type="submit" value='제출'/>
