@@ -1,15 +1,15 @@
-
+import React from 'react';
+import { useState } from 'react';
 
 import {BiCalendarPlus} from 'react-icons/bi'
 
-function AddAppointment(){
+function AddWrite({toggleForm}){
+    if(!toggleForm){
+        return null
+    }
     return(
-        <div id="appoint">
-            <h4>
-                <BiCalendarPlus />
-                예약하기
-            </h4>
-            <ul>
+        <>
+        <ul>
                 <li>
                 <label htmlFor='userName'>집사명</label>
                 <input id='userName'
@@ -36,8 +36,27 @@ function AddAppointment(){
                 type='textarea' cols='30' rows='10' placeholder='기타설명'/></li>
             </ul>
             <p>
-                <input type="submit" value='제출'/>
+                <input type="submit" value='제출'
+                />
             </p>
+        </>
+    )
+}
+
+function AddAppointment(){
+    // 
+    const [toggleForm,setToggleForm] = useState(false)
+
+    return(
+        <div id="appoint">
+            <h4 onClick={
+                ()=>{setToggleForm(!toggleForm)}
+            }>
+                <BiCalendarPlus />
+                예약하기
+            </h4>
+            <AddWrite 
+            toggleForm={toggleForm}/>
         </div>
     )
 }
